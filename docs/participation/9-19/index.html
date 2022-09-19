@@ -9,38 +9,50 @@
 <body>
     <h1>Hello, World! New web page, who is this?</h1>
     <img src="icee.jpg" alt="">
-    <form action="submission.html">
-        <p>
-            <label for="first">First Name:</label>
-            <input value="Default Value" type="text" id="first" name="first" placeholder="FIRST name only please">
-        </p>
+    <fieldset>
+        <legend>Feedback Form</legend>
+        <form action="submission.html">
+            <p>
+                <label for="first">First Name:</label>
+                <input value="Default Value" type="text" id="first" name="first" placeholder="FIRST name only please">
+            </p>
 
-        <p>
-            <label for="last">Last Name:</label>
-            <input type="text" id="last" name="last" placeholder="LAST name only please">
-        </p>
+            <p>
+                <label for="last">Last Name:</label>
+                <input type="text" id="last" name="last" placeholder="LAST name only please">
+            </p>
 
-        
-        <p>
-            <label for="area">Tell me a story...</label>
-            <textarea id="area" rows="5" name="area" placeholder="Enter multi-line text here"></textarea>
-        </p>
+            
+            <p>
+                <label for="area">Tell me a story...</label>
+                <textarea id="area" rows="5" name="area" placeholder="Enter multi-line text here"></textarea>
+            </p>
 
-        <p>
-            <label for="checkbox">I see what you did there:</label>
-            <input type="checkbox" name="checkbox" id="checkbox">
-        </p>
+            <p>
+                <label for="checkbox">I see what you did there:</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+            </p>
 
-        <p>
-            <label for="dropdown">It is funny:</label>
-            <select name="dropdown" id="dropdown">
-                <option value="maybe">I don't know</option>
-                <option value="yes">Absolutely!</option>
-                <option value="no">Not at all.</option>
-            </select>
-        </p>
+            <p>
+                <label for="radio0">Rate this page 0-4 "stars":</label>
+                <input type="radio" value="0" name="radio0">
+                <input type="radio" value="1" name="radio1">
+                <input type="radio" value="2" name="radio2">
+                <input type="radio" value="3" name="radio3">
+                <input type="radio" value="4" name="radio4">
+            </p>
 
-        <input type="submit" value="Submit Form Data">
-    </form>
+            <p>
+                <label for="dropdown">It is funny:</label>
+                <select name="dropdown" id="dropdown">
+                    <option value="maybe">I don't know</option>
+                    <option value="yes">Absolutely!</option>
+                    <option value="no">Not at all.</option>
+                </select>
+            </p>
+
+            <input type="submit" value="Submit Form Data">
+        </form>
+    </fieldset>
 </body>
 </html>
