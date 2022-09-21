@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-19 Participation (Fake Form)</title>
+
+    <style>
+        h1 {color: darkgreen; font-size: xx-large;}
+    </style>
+</head>
+<body>
+    <h1>Hello, World! New web page, who is this?</h1>
+    <img src="icee.jpg" alt="icee what you did there">
+    <fieldset>
+        <legend>Feedback Form</legend>
+        <form action="submission.html">
+            <p>
+                <label for="first">First Name:</label>
+                <input value="Default Value" type="text" id="first" name="first" placeholder="FIRST name only please">
+            </p>
+
+            <p>
+                <label for="last">Last Name:</label>
+                <input type="text" id="last" name="last" placeholder="LAST name only please">
+            </p>
+
+            
+            <p>
+                <label for="area">Tell me a story...</label>
+                <textarea id="area" rows="5" name="area" placeholder="Enter multi-line text here"></textarea>
+            </p>
+
+            <p>
+                <label for="checkbox">I see what you did there:</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+            </p>
+
+            <p>
+                <label for="radio">Rate this page 0-4 "stars":</label>
+                <label for="radio0"><strong>0</strong></label>
+                <input type="radio" value="0" name="radio" id="radio0">
+                <input type="radio" value="1" name="radio" id="radio1">
+                <input type="radio" value="2" name="radio" id="radio2">
+                <input type="radio" value="3" name="radio" id="radio3">
+                <input type="radio" value="4" name="radio" id="radio4">
+                <label for="radio4"><strong>4</strong></label>
+            </p>
+
+            <p>
+                <label for="dropdown">It is funny:</label>
+                <select name="dropdown" id="dropdown">
+                    <option value="maybe">I don't know</option>
+                    <option value="yes">Absolutely!</option>
+                    <option value="no">Not at all.</option>
+                </select>
+            </p>
+
+            <input type="submit" value="Submit Form Data">
+        </form>
+    </fieldset>
+    <p>Click <a href="../../index.html">here</a> to return to index page</p>
+</body>
+</html>
