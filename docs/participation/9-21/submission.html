@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9-19 Submission Page</title>
+    <title>9-21 Submission Page</title>
 
     <style>
         table,
@@ -14,7 +14,56 @@
             border-collapse: collapse;
         }
     </style>
+
+<script>
+    /*
+        This script segment is intended to simulate a form
+        getting data from a form post on the referring page.
+        We are only doing this for now until we go over a 
+        web server implementation that contains a server side
+        presence.
+    */
+    window.onload = function () {
+        //(GET method) get your query string values by field
+        var firstName = GetURLParameterValue("fname");
+        var lastName = GetURLParameterValue("lname");
+        var saw = GetURLParameterValue("saw");
+        var rating = GetURLParameterValue("rating");
+        var agree = GetURLParameterValue("agree");
+        //populate desired HTML elements with desired values
+        //we pass in the id name of the HTML element we want
+        //to populate with the query string text
+        // (e.g., id="fname" is found on the HTML element we
+        // want to populate with text)
+        document.getElementById("fname").textContent = firstName;
+        document.getElementById("lname").textContent = lastName;
+        if (saw == "on") {
+            document.getElementById("saw").textContent = "yes";
+        }
+        else {
+            document.getElementById("saw").textContent = "no";
+        }
+            document.getElementById("rating").textContent = rating;
+        document.getElementById("agree").textContent = agree;
+    };
+
+    //Function retrieves the requested GET parameter value from
+    //the query string. Input is the field name for the 
+    //field-value pair in the query string,
+    //e.g., field=value -> first=bob
+    function GetURLParameterValue(searchParameter) {
+        var queryString = window.location.search.substring(1);
+        var URLFieldValues = queryString.split('&');
+        for (var i = 0; i < URLFieldValues.length; i++) {
+            var parameterValues = URLFieldValues[i].split('=');
+            if (parameterValues[0] == searchParameter) {
+                return parameterValues[1];
+            }
+        }
+    };
+</script>
 </head>
+
 <body>
     <!-- Reminder -- no method attribute specific, so it defaults to GET -->
     <h1> Feedback Submission Success</h1>
@@ -29,12 +78,13 @@
                 <th>It was funny</th>
             </tr>
             <tr>
-                <td id="first"></td>
-                <td id="last"></td>
-                <td id="checkbox"></td>
-                <td id="radio"></td>
-                <td id="dropdown"></td>
+                <td id="fname"></td>
+                <td id="lname"></td>
+                <td id="saw"></td>
+                <td id="rating"></td>
+                <td id="agree"></td>
             </tr>
     </table>
+    <p>Click <a href="index.html">here</a> to fill out another form</p>
 </body>
 </html>
