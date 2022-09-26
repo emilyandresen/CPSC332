@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        https://www.w3schools.com/cssref/css3_pr_background.asp
+        The background property is a shorthand property for:
+            background-color
+            background-image
+            background-position
+            background-size
+            background-repeat
+            background-origin
+            background-clip
+            background-attachment
+            It does not matter if one of the values above are missing, e.g. background:#ff0000 url(smiley.gif); is allowed.
+            example:
+            background: lightblue url("img_tree.gif") no-repeat fixed center;
+        */
+
+        :root {
+            --custom-color: rgb(106, 51, 19);
+            --custom-font: "Times New Roman, Times, serif";
+        }
+
+        h1 {
+            color: var(--custom-color);
+            margin: 0%
+        }
+
+        body {
+            background-color: beige;
+        }
+
+        #test {
+            float: left
+        }
+
+        .custom-green {
+            /* clear: right; */
+            margin: 50px 20px;
+            /* top right bottom left */
+            padding: 20px 50px;
+            border: 10px solid var(--custom-color);
+            color:rgb(34, 153, 40);
+
+        }
+
+        #second-paragraph {
+            color: var(--custom-color);
+            /* display: none; */
+            padding: 10px;
+            border: 5px solid purple;
+            margin: 5px;
+            width: 200px;
+            height: 100px;
+            /* overflow: hidden; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Color Property</h1>
+    <!--float allows text to flow around the image-->
+    <img id="test" src="icee.jpg" height="200">
+    <!--clear prevents text to flow around the image-->
+    <p class="custom-green">
+        <!-- <img id="test2" src="cough.jpg" height="100"> -->
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+        at turpis
+        eu tellus pulvinar
+        cursus porta luctus
+        mi.
+        Nulla rutrum quis lacus ac faucibus. Phasellus pellentesque justo a nunc accumsan, ut euismod augue
+        consectetur.
+        Sed eu enim est. Curabitur quis volutpat sapien, eget viverra eros. Donec semper fermentum ligula et
+        efficitur.
+        Proin ipsum felis, volutpat ac elementum a, condimentum quis diam. In euismod enim erat, et vehicula sapien
+        interdum auctor. Duis viverra quam in commodo ultricies. Nunc pulvinar nibh ac elit ultrices, nec faucibus
+        turpis viverra. Ut aliquet augue nisi, eget maximus lorem feugiat id. Donec interdum, purus non semper
+        laoreet,
+        tellus felis rutrum mauris, ac semper orci nunc et felis. Suspendisse potenti. Ut non ipsum vitae nulla
+        varius
+        pulvinar nec et diam.
+    </p>
+
+    <p id="second-paragraph">This is the second paragraph. We are going to modify this in some manner.</p>
+    <p><span style="display: inline-block; width: 80px;">This is some text</span></p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+    <p>This is some text</p>
+</body>
+
+</html>
