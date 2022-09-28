@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box Layout</title>
+
+    <style>
+        body {
+            background-color: beige;
+            width: 960px;
+        }
+        nav {
+            background-color: gray;
+            width: 960px;
+            height: 40px;
+        }
+        article {
+            background-color: lightgreen;
+            float: left;
+            width: 192px;
+            height: 200px;
+        }
+        section {
+            background-color: lightblue;
+            float: right;
+            width: 768px;
+            height: 200px;
+            text-align: center;
+        }
+        p {
+            
+            text-indent: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex">
+        <nav>
+            <p>Logo - Navigation Section</p>
+        </nav>
+    </div>
+    <div style="display: flex">
+        <div id="Intro" style="background-color: green;">
+            <p>Profile Image</p>
+            <p>Introduction</p>
+        </div>
+        <div id="content" style="background-color: blue;">
+            <p>A lot of stuff here</p>
+        </div>
+    </div>
+</body>
+</html>
