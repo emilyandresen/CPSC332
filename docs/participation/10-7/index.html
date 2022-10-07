@@ -30,11 +30,37 @@
             let myDouble;
             // declared as undefined
 
-            alert("I'm annoying");
+            // alert("I'm annoying");
             // generally not recommended because they are obstructive
 
             console.log("this is a console message")
+            // let response = prompt("Do you want to play a game?")
+            // alert("You said" + response)
             // more advisable
+            if (true) {
+                let y = 42;
+            }
+
+            let number = 2;
+            let aString = "2";
+            console.log(number + 2);
+            console.log(number + "2");
+            console.log(number + parseInt(aString));
+
+            if (number === 10) {
+                // === is a an identity (strict equality): both the value and the datatype must be the same
+                // !== is the opposite of ===
+            }
+
+            function printTwoThingsToConsole(message, someNumber) {
+                console.log("The message is: " + message + " and someNumber is: " + someNumber);
+                return 9001
+            }
+
+            let myResult = printTwoThingsToConsole(42, "This is my message")
+            console.log(myResult)
+
+            // anonymous functions
 
         }
         // need to close curly braces
