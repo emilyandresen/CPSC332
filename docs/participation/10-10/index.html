@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-10 Participation</title>
-    <link rel="icon" href="images.png">
     <style>
         body {
-            background-color:mistyrose;
+            background-color:midnightblue;
+            color: white;
             font-family: "Segoe UI";
             width: 400px;
         }
@@ -17,6 +17,12 @@
         // a lot like C++, not compiled
         // use the console log errors and visual debugging to find errors
         window.onload = function() {
+            printTwoThingsToConsole("one", 2);
+
+            // when this arrowAdd2() is run before its initialization, the
+            // code stops and does not execute the rest of the script
+            // arrowAdd2(40, 1, 2);
+
             let myOtherInt = 9001;
             // let is recommended for local variables
             var myInt = "42";
@@ -54,26 +60,106 @@
 
             function printTwoThingsToConsole(message, someNumber) {
                 console.log("The message is: " + message + " and someNumber is: " + someNumber);
-                return 9001
+                return 9001;
             }
 
-            let myResult = printTwoThingsToConsole(42, "This is my message")
-            console.log(myResult)
+            let myResult = printTwoThingsToConsole(42, "This is my message");
+            console.log(myResult);
 
             // anonymous functions
+            (function () {
+                console.log("Hello, Anonymous!");
+            })();
 
+            try {
+                arrowAdd2(40, 1, 2);
+            } catch (error) {
+                console.log(error);
+            } finally {
+                console.log("finally");
+            }
+            let arrowAdd2 = (x, y, z) => x + 2;
+            arrowAdd2(40, 1, 2);
+
+            var myArray = [1, 2, 3, 4];
+
+            for (let i = 0; i < myArray.length; i++) {
+                console.log(myArray[i]);
+            } 
+
+            for (const myVal of myArray) {
+                console.log(myVal);
+            }
+
+            // https://www.w3schools.com/jsref/jsref_foreach.asp
+            myArray.forEach(function (item, i) {
+                // anything here
+                console.log(item + " " + i);
+            });
+
+            // the built-in "sort" fxn uses unicode to sort, not values
+            // need to add on an arrow function to get it to sort by values
+
+            var myObject = {
+                name: "defaultName",
+                someNumber: 42,
+                anArray: [1, 2, 3, 4, 5, 6],
+
+                // object method
+                echo: function(value) {
+                    console.log(value);
+                },
+
+                get numberPlusOne() {
+                  return this.someNumber + 1;  
+                },
+
+                set someNumberPlusAnother(num){
+                    this.someNumber += num;
+                },
+            };
+
+            console.log(myObject.name);
+            
+            myObject.name = "Bob Smith";
+            console.log(myObject.name);
+            myObject.echo("Hello World!");
+
+            console.log(myObject.numberPlusOne);
+            console.log(myObject.someNumberPlusAnother = 4);
+            console.log(myObject.someNumber);
+
+            let dateTimeNow = new Date();
+            console.log(dateTimeNow);
         }
         // need to close curly braces
+
+        var currentDate = {
+            dateTime: null,
+        };
+
+        document.getElementById("update-date")
+            .addEventListener("click", pizzaTime);
+
+        function pizzaTime(){
+            console.log("Is it pizza time???")
+        };
     </script>
 </head>
 <body>
     <h1>Even More JavaScript, Yay!</h1>
-    <ol type="a">
-        <li>This is my very first time using JavaScript. I am not familiar with it at all.</li>
-        <li>I am surprised that variable types are not rigid and do not need to be explicitly 
-            declared. Because Java is in the name, I expected JavaScript to follow similar 
-            rules and syntax.</li>
-    </ol>
-    <a href="../../">Back to index page</a>
+    <div>
+        <p>
+            <span id="date-text">
+                Click the button...
+            </span>
+        </p>
+        <p>
+            <button id="update-date">
+                Click to see current date time!
+            </button>
+        </p>
+    </div>
+    <a href="../../" style="color: lightblue;">Back to index page</a>
 </body>
 </html>
