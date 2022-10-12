@@ -30,6 +30,26 @@
             var allDivs = document.querySelectorAll("body div");
             var firstDiv = document.querySelector("body div");
 
+            // event handler
+            document.getElementById("date-button-start").addEventListener("click", startClock);
+            document.getElementById("date-button-stop").addEventListener("click", stopClock);
+
+            var clock = null;
+
+            function startClock() {
+                console.log("start clock clicked");
+                clock = setInterval(updateClock, 1000);
+            }
+
+            function stopClock() {
+                console.log("stop clock clicked");
+                clearInterval(clock);
+            }
+
+            function updateClock() {
+                console.log("I'm a clock!")
+                document.getElementById("date-span").textContent = new Date()
+            }
 
         }//end of onload function
     </script>
@@ -39,6 +59,10 @@
     <div id="container">
         This is div content
     </div>
+    <!-- id is supposed to be unique. the javascript will use the first match of the id it finds -->
+    <!-- <div id="container">
+        This is another div container
+    </div> -->
     <div>
         <ul class="unordered-list">
             <li>Item 1</li>
