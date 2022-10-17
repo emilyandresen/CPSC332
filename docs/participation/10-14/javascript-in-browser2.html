@@ -98,6 +98,13 @@
                     newDiv.id = "temp-div";
                     newDiv.style = "border: 2px solid red; padding: 10px; border-radius: 30px; margin: 15px; background-color: bisque;";
                     document.getElementById("container").appendChild(newDiv);
+
+                    //let's add a paragraph to the new div
+                    let newP = document.createElement("p");
+                    let date = new Date();
+                    // set the content for our paragraph
+                    newP.textContent = `Hello, World! I was created at ${date}`;
+                    document.getElementById("temp-div").appendChild(newP);
                 }
             };
 
