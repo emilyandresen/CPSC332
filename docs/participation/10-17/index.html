@@ -36,15 +36,15 @@
             //Classes are "constructor functions"            
             //Ball class:
             //#region no prototype method
-            // function Ball(radius, color) {
-            //     this.radius = radius; //public properties
-            //     this.color = color;
+            function Ball(radius, color) {
+                this.radius = radius; //public properties
+                this.color = color;
 
-            //     //memory allocated for EACH instance of Ball!
-            //     this.draw = function () {
-            //         console.log("draw method");
-            //     };
-            // };
+                //memory allocated for EACH instance of Ball!
+                this.draw = function () {
+                    console.log("draw method");
+                };
+            };
             //#endregion
 
             //#region prototype method class
@@ -93,7 +93,7 @@
                     }
                     //draw the circle                   
                     context.fill();
-
+                    
                     //changing shadow for stroke
                     context.shadowBlur = 0;
                     context.shadowOffsetX = 0;
@@ -199,10 +199,10 @@
                 console.log(xVal, yVal);
 
                 //create a new ball
-                // let chosenColor = colors[Math.floor(Math.random() * colors.length)];
-                // let newBall = new Ball(Math.floor(Math.random() * 50) + 1,
-                //     chosenColor, [xVal, yVal]);
-                // newBall.draw();
+                let chosenColor = colors[Math.floor(Math.random() * colors.length)];
+                let newBall = new Ball(Math.floor(Math.random() * 50) + 1,
+                    chosenColor, [xVal, yVal]);
+                newBall.draw();
 
                 //alternate1
                 // ball2.move(xVal, yVal);
