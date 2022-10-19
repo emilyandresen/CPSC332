@@ -26,9 +26,9 @@
 
             var cutCircle = function (context, x, y, radius) {
                 context.globalCompositeOperation = 'destination-out'
-                context.arc(x, y, radius, 0, Math.PI * 2, true);
+                //context.arc(x, y, radius, 0, Math.PI * 2, true);
                 //alternate cut area
-                // context.arc(x, y, radius + 5, 0, Math.PI * 2, true); //where 5 is the shadow radius
+                context.arc(x, y, radius + 5, 0, Math.PI * 2, true); //where 5 is the shadow radius
                 context.fill();
             }
 
@@ -106,7 +106,6 @@
                     context.closePath();
                 };
 
-
                 Ball.prototype.clear = function () {
                     cutCircle(context, this.position[0], this.position[1], this.radius + 10);
                 };
@@ -150,12 +149,17 @@
 
             var ball2 = new Ball(25, "red", [85, 55]);
             // ball2.setName("Red Ball 2");
-            // ball2.draw();
+            ball2.draw();
             // ball2.move(200, 155);
 
             // ball1.draw(); //would need to redraw the ball if we don't want it cut from overlap
 
             //#region mouseclick
+
+
+            var ball2Coords = [85, 55];
+            var XInc = 5;
+            var YInc = 3;
 
             canvas.addEventListener("click", createAtMouseClick);
 
@@ -182,6 +186,12 @@
 
             //#region mousemove and mouseover
             //mousemove event
+            
+            // add animation
+            // animFrameId = window.requestAnimationFrame(() => {
+            //     ball2Coords[0] += xInc;
+            //     if(ball2Coords)
+            // };
 
             var animFrameId; //used like clearInterval except for animation: cancelAnimationFrame(animFrameId)
             var lastPosition = [0, 0];
@@ -190,7 +200,11 @@
                 lastPosition = [e.clientX, e.clientY];
                 console.log("Event: " + e.clientX);
                 //on mouse move, request the animation frame is updated (redraw/paint the canvas)
-                animFrameId = window.requestAnimationFrame(createAtMouseMove);
+                //animFrameId = window.requestAnimationFrame(createAtMouseMove);
+            });
+
+            canvas.addEventListener("mouseout", function (e) {
+                animFrameId = window.cancelAnimationFrame(animFrameId);
             });
 
             function createAtMouseMove() {
