@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10/21 Participation</title>
+    <style>
+        fieldset legend {
+            padding: 5px;
+            margin: 10px;
+            border: 10px solid lightblue;
+            border-radius: 5px;
+        }
+
+        fieldset {
+            border: 10px solid lightgreen;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        form {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        div {
+            margin: 10px;
+        }
+
+    </style>
+    <script>
+        const firstButton = document.getElementById("firstButton");
+        const middleButton = document.getElementById("middleButton");
+        const lastButton = document.getElementById("lastButton");
+
+        firstButton.addEventListener("click", function() {
+            let firstContent = document.getElementById("first").textContent;
+            if (firstContent != "") {
+                localStorage.setItem("firstName", firstContent);
+                document.getElementById("first").setAttribute(background-color, lightgreen);
+            }
+            else {
+                errorMessage = document.createElement("div");
+                errorMessage.textContent = "Error: Please enter a value in the box before saving.";
+                document.getElementById("firstDiv").appendChild(errorMessage);
+            }
+        });
+        
+        middleButton.addEventListener("click", function() {
+            let middleContent = document.getElementById("middle").textContent;
+            if (middleContent != "") {
+                localStorage.setItem("middleName", middleContent);
+                document.getElementById("middle").setAttribute(background-color, lightgreen);
+            }
+            else {
+                errorMessage = document.createElement("div");
+                errorMessage.textContent = "Error: Please enter a value in the box before saving.";
+                document.getElementById("middleDiv").appendChild(errorMessage);
+            }
+        });
+        
+        firstButton.addEventListener("click", function() {
+            let lastContent = document.getElementById("last").textContent;
+            if (lastContent != "") {
+                localStorage.setItem("lastName", lastContent);
+                document.getElementById("last").setAttribute(background-color, lightgreen);
+            }
+            else {
+                errorMessage = document.createElement("div");
+                errorMessage.textContent = "Error: Please enter a value in the box before saving.";
+                document.getElementById("lastDiv").appendChild(errorMessage);
+            }
+        });
+    </script>
+</head>
+<body id="body">
+    <fieldset>
+        <legend>CPSC 332 10/21 Participation</legend>
+    
+        <form method="POST" action="submission.html">
+            <div id="firstDiv">    
+                <label for="first">First Name:</label>
+                <input type="text" id="first" name="first">
+                <button type="button" id="firstButton" name="firstButton">Save Data</button>
+            </div>
+
+            <div id="middleDiv">
+                <label for="middle">Middle Name:</label>
+                <input type="text" id="middle" name="middle">
+                <button type="button" id="middleButton" name="middleButton">Save Data</button>
+            </div>
+
+            <div id="lastDiv">
+                <label for="last">Last Name:</label>
+                <input type="text" id="last" name="last">
+                <button type="button" id="lastButton" name="lastButton">Save Data</button>
+            </div>
+
+            <div>
+                <input type="submit" value="Submit Response">
+            </div>
+        </form>
+    </fieldset>
+    <a href="../../" style="color: lightblue;">Back to index page</a>
+</body>
+</html>
