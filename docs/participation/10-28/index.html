@@ -17,6 +17,9 @@
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
 
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" 
+        integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+
     <script>
 
         //#2
@@ -83,6 +86,7 @@
             });
 
             // #7. Styles!
+            // added as in-line styles -- will always override other styles
             // method 1: property-value pair
             $("div").css("border", "2px solid purple");
 
@@ -93,14 +97,29 @@
                 "margin-top": "10px",
                 marginBottom: "5px",
                 backgroundColor: "rgb(235, 97, 35)"
-            })
-
+            });
 
             //Activity (Using JQuery):
             //1. Center the button created in this lecture using the property-value pair CSS method 1 demonstrated during lecture.
+            $("div").css("align", "center");
             //2. Apply a background color, border, padding, and margin (your choice) to the ordered list using the object literal method demonstrated during lecture
+            $("ol").css({
+                backgroundColor: "green",
+                color: "white",
+                border: "2px solid purple",
+                padding: "20px",
+                margin: "10px"
+            });
             //3. Add an event listener to the ordered list list items so the color changes as you hover over each individual list item (color is your choice).
+            $("li").on("hover", function() {
+                $("li").css("color", "red");
+            });
 
+            // UI droppable
+            // $("div").attr("class", "draggable ui-widget-content");
+            // $(function() {
+            //     $(".draggable").draggable();
+            // });
         }); //end of ready function 
     </script>
 
