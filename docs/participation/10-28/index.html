@@ -40,33 +40,60 @@
 
             //#6 Events -- handled similar to standard JS but more concise!
             //let's add a button with JQuery. it's content (label) and an id!
-            $("#container").click(() => {
-                alert("clicked");
-            });
 
+            // equivalent to line after
+            // document.getElementById("container").addEventListener("click", callbackFunction);
             $("#container").on("click", callbackFunction);
 
-            function callbackFunction() {
-                alert("another click");
-            }
+            // $("#container").click(() => {
+            //     alert("clicked");
+            // });
+
 
             //now let's add an event handler for when we click it
-
-
             //we need a callback function!
+
+            function callbackFunction() {
+                // alert("another click");
+                console.log("Div clicked: (HTML content JS: "
+                    + this.innerHTML
+                    + ")");
+
+                console.log("Div clicked: (HTML content JS: "
+                    + $(this).html()
+                    + ")");
+            }
 
             //let's try a different event
             //JavaScript Method
 
-
+            // let headers = document.getElementsByTagName("h1");
+            // for (const element of headers) {
+            //     element.addEventListener("dblclick", function() {
+            //         console.log("double clicked detected on h1 element");
+            //         $("body").append($("<h2>").text("New h2!"));
+            //     });
+            // };
 
             //JQuery Method
 
+            $("h1").on("dblclick", function() {
+                console.log("double clicked detected on h1 element");
+                $("body").append($("<h2>").text("New h2!"));
+            });
 
-            //#7. Styles!
-            //method 1: property-value pair
+            // #7. Styles!
+            // method 1: property-value pair
+            $("div").css("border", "2px solid purple");
 
-            //method 2: object literal
+            // method 2: object literal
+            $("div").css({
+                padding: "10px",
+                borderRadius: "20px",
+                "margin-top": "10px",
+                marginBottom: "5px",
+                backgroundColor: "rgb(235, 97, 35)"
+            })
 
 
             //Activity (Using JQuery):
@@ -87,6 +114,7 @@
 
         </ol>
     </div>
+    <h1>This is another h1 element</h1>
     <a href="../../index.html">Back to the participation index</a>
 </body>
 
