@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSC 332 Exam 2</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.js" 
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <style>
+        #information {
+            visibility: hidden;
+            background-color: red;
+            color: white;
+            text-emphasis: bold;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            var $submitButton = jQuery(document.getElementById("button1"));
+            var $clearButton = jQuery(document.getElementById("button2"));
+            var $calcButton = jQuery(document.getElementById("button3"));
+            var $input1 = jQuery(document.getElementById("field1"));
+            var $input2 = jQuery(document.getElementById("field2"));
+            var $input3 = jQuery(document.getElementById("field3"));
+            $submitButton.on("click", function() {
+                if ($input1.text() == "" || $input1.text() == "" || $input1.text() == "") {
+                    $("#information").css("visibility", "visible");
+                    $("#information").text("All fields must contain data!");
+                }
+                else {
+                    $submitButton.add("type=submit");
+                }
+
+            });
+
+            $input1.on("keypress", hideInfoDiv);
+            $input2.on("keypress", hideInfoDiv);
+            $input3.on("keypress", hideInfoDiv);
+
+            function hideInfoDiv() {
+                $("#information").css("visibility", "hidden");
+            }  
+
+            $clearButton.on("click", function() {
+                $input1.text("");
+                $input2.text("");
+                $input3.text("");              
+            });
+
+            $calcButton.on("click", function() {
+                let num = 3568;
+                $calcButton.text(num);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="information" class="information"></div>
+    <fieldset id="fieldset">
+        <legend>CPSC 332 Exam 2 Answer Submission Form</legend>
+        <form method="post" action="https://gu-dmo.alwaysdata.net/exam2/exam-submission.php">
+            <div class="inputs">
+                <label for="field1">Label 1</label>
+                <input type="text" id="field1" name="field1">
+            </div>
+            <div class="inputs">
+                <label for="field2">Label 2</label>
+                <input type="text" id="field2" name="field3">
+            </div>
+            <div class="inputs">
+                <label for="field3">Calculation Result:</label>
+                <input type="text" id="field3" name="field3" readonly>
+            </div>
+            <div>
+                <input type="button" value="Submit Response" id="button1" name="button1">
+                <button id="button2" name="button2">Clear Form</button>
+                <button id="button3" name="button3">Calculate</button>
+            </div>
+        </form>
+    </fieldset>
+</body>
+</html>
